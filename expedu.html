@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head profile="http://www.w3.org/2005/10/profile">
+    <link rel="stylesheet" type="text/css" href="node_modules/styles/viewer.css">
+    <script src="./node_modules/pdfjs-dist/build/pdf.js"></script>
+    <script src="./node_modules/pdfjs-dist/web/pdf_viewer.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <a href="./CanTuksavul_CV.pdf.pdf" download><i class="fa fa-download fa-3x" aria-hidden="true"></i><b>Have your own copy</b></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div id="viewerContainer">
+                    <div id="viewer" class="pdfViewer"></div>
+                </div>
+
+                <div id="loadingBar">
+                    <div class="progress"></div>
+                    <div class="glimmer"></div>
+                </div>
+
+                <div id="errorWrapper" hidden="true">
+                    <div id="errorMessageLeft">
+                        <span id="errorMessage"></span>
+                        <button id="errorShowMore">
+                            More Information
+                        </button>
+                        <button id="errorShowLess">
+                            Less Information
+                        </button>
+                    </div>
+                    <div id="errorMessageRight">
+                        <button id="errorClose">
+                            Close
+                        </button>
+                    </div>
+                    <div class="clearBoth"></div>
+                    <textarea id="errorMoreInfo" hidden="true" readonly="readonly"></textarea>
+                </div>
+
+                <footer>
+                    <button class="toolbarButton pageUp" title="Previous Page" id="previous"></button>
+                    <button class="toolbarButton pageDown" title="Next Page" id="next"></button>
+
+                    <input type="number" id="pageNumber" class="toolbarField pageNumber" value="1" size="4" min="1">
+
+                    <button class="toolbarButton zoomOut" title="Zoom Out" id="zoomOut"></button>
+                    <button class="toolbarButton zoomIn" title="Zoom In" id="zoomIn"></button>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="viewer.js"></script>
+    <script>
+//        $(function(){
+//            $("#nav-placeholder").load("nav.html");
+//        });
+    </script>
+</body>
+</html>

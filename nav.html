@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center">
+    <a id="home_link" class="navbar-brand d-flex w-50 mr-auto" href="index.html">
+        <img width="50" height="50" alt="" src="./images/app_icon.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+        <ul class="navbar-nav w-100 justify-content-center">
+            <li class="nav-item">
+                <a id="exp_link" class="nav-link" style="cursor:pointer">Experience & Education</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+            <li class="nav-item">
+                <a href="http://github.com/cantux"><i class="fab fa-github fa-3x"></i></a>
+            </li>
+            <li class="nav-item">
+                <a href="http://linkedin.com/in/cantuksavul"><i class="fab fa-linkedin fa-3x"></i></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    (
+        function() {
+            $('#home_link').click(function (e) {
+                location.hash = "photos";
+                $("#content-placeholder").load("carousel.html");
+            });
+            $('#exp_link').click(function (e) {
+                location.hash = "expedu";
+                $("#content-placeholder").load("expedu.html");
+            })
+        }
+    )();
+</script>
+</html>
