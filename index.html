@@ -45,8 +45,31 @@ limitations under the License.
     </div>
     <script>
         $(function(){
+            // start by loading the navigation bar
             $("#nav-placeholder").load("nav.html");
-            var hash = (location.href.split("#")[1] || "");
+
+            // first time routed to the site.
+            hashRoute();
+            console.log('after first load hashRoute called');
+
+            window.addEventListener('hashchange', function (e) {
+                console.log('hash change listener param e: ', e);
+                var hash = (location.href.split("#")[1] || ""); // figure out what's after hash.
+                console.log("computed hash: ", hash);
+                if(hash === "expedu")
+                {
+                    location.hash = "expedu";
+                    $("#content-placeholder").load("expedu.html");
+                }
+                else
+                {
+                    location.hash = "photos";
+                    $("#content-placeholder").load("carousel.html");
+                }
+            })
+        });
+        function hashRoute () {
+            var hash = (location.href.split("#")[1] || ""); // figure out what's after hash.
             if(hash === "expedu")
             {
                 location.hash = "expedu";
@@ -57,7 +80,7 @@ limitations under the License.
                 location.hash = "photos";
                 $("#content-placeholder").load("carousel.html");
             }
-        });
+        }
 
     </script>
   </body>
