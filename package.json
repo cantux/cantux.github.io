@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/cantux/cantux.github.io#readme",
   "dependencies": {
-    "pdfjs-dist": "^2.0.489"
+    "pdfjs-dist": "^2.16.105"
   }
 }
